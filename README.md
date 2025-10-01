@@ -1,0 +1,5 @@
+export MLFLOW_TRACKING_URI=https://dagshub.com/TSuGeNo/MLOps-MLflow-Operations.mlflow
+
+export MLFLOW_TRACKING_USERNAME=TSuGeNo
+
+export MLFLOW_TRACKING_PASSWORD=74a9b6f4c3d0a2e2f4b1f3c9e8d7a6b5

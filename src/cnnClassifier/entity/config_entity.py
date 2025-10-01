@@ -1,12 +1,14 @@
 from dataclasses import dataclass
 from pathlib import Path
 
+
 @dataclass(frozen=True)
 class DataIngestionConfig:
-    root_dir: Path = Path("artifacts/data_ingestion")
-    source_URL: str = "https://drive.google.com/file/d/1z0mreUtRmR-P-magILsDR3T7M6IkGXtY/view?usp=sharing"
-    local_data_file: Path = root_dir / "Chest-CT-Scan-data.zip"
-    unzip_dir: Path = root_dir / "unzipped"
+    root_dir: Path
+    source_URL: str
+    local_data_file: Path
+    unzip_dir: Path
+
 
 
 @dataclass(frozen=True)
@@ -19,7 +21,9 @@ class PrepareBaseModelConfig:
     params_include_top: bool
     params_weights: str
     params_classes: int
-    
+
+
+
 
 @dataclass(frozen=True)
 class TrainingConfig:
@@ -31,3 +35,14 @@ class TrainingConfig:
     params_batch_size: int
     params_is_augmentation: bool
     params_image_size: list
+
+
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_uri: str
+    params_image_size: list
+    params_batch_size: int
